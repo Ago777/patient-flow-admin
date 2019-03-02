@@ -1615,367 +1615,41 @@ button {
 }
 
 /* 09.Navbar*/
-.navbar {
-  background: $foreground-color;
-  height: $navbar-height;
-  padding: 0 $main-margin 0 0;
-  @include depth(1);
-
-  #notificationDropdown {
-    width: 260px;
-    padding: 1.5rem;
-    height: 280px;
-    right: 15px;
+.top-nav {
+  background: $theme-color-1;
+  .navbar {
+    padding: 5px 35px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-size: 12px;
+    font-weight: 600
+  }
+  .logo-txt {
+    background: linear-gradient(to right, #ffffff 0%, #adadad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: sans-serif;
+    font-weight: bolder;
+    margin-bottom: -5px;
+    margin-left: -7px;
   }
 
-  #iconMenuDropdown {
-    width: 240px;
-    padding: 1.5rem;
-    height: 280px;
+  .logo-txt.txt {
+    margin-top: 0px;
   }
 
-  .icon-menu-item {
-    width: 90px;
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 1.7rem;
-    color: rgba($primary-color, 0.8);
-
-    i {
-      font-size: 28px;
-      line-height: 42px;
-    }
-
-    span {
-      text-align: center;
-      padding: 0 10px;
-      line-height: 14px;
-    }
-
-    &:hover,
-    &:focus {
-      color: $theme-color-1;
-    }
+  .navbar-light .navbar-toggler {
+    border-color: white;
+    background-color: white;
   }
 
-  .menu-button-mobile {
-    color: $secondary-color;
-    text-align: center;
-
-    svg {
-      height: 12px;
-      fill: $primary-color;
-    }
-
-    @include respond-below(sm) {
-      width: 20px;
+  @include respond-below(md) {
+    .material-icons {
+      margin-right: 15px;
     }
   }
-
-  .menu-button {
-    color: $secondary-color;
-    width: $main-menu-width;
-    text-align: center;
-    margin-left: 85px;
-
-    svg {
-      height: 12px;
-    }
-
-    .main {
-      fill: $primary-color;
-      transition: fill $menu-collapse-time;
-    }
-
-    .sub {
-      fill: $primary-color;
-      transition: fill $menu-collapse-time;
-    }
-
-    &:hover {
-      color: $theme-color-1;
-    }
-
-    @include respond-below(sm) {
-      width: 60px;
-    }
-  }
-
-  .navbar-logo {
-    width: 55px;
-    height: 30px;
-    position: absolute;
-    display: -webkit-inline-box;
-    left: 0;
-    right: 0;
-    margin: 0 20px;
-
-    .logo {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: url($logoPath) no-repeat;
-      background-position: center center;
-      background-size: contain;
-    }
-
-    .logo-mobile {
-      width: 100%;
-      height: 100%;
-      background: url($logoPathMobile) no-repeat;
-      background-position: center center;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      margin-top: -2px;
-    }
-
-    .logo-txt {
-      background: linear-gradient(to right, #30CFD0 0%, #3d6578 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: sans-serif;
-      font-weight: bolder;
-      margin-bottom: -5px;
-      margin-left: -7px;
-    }
-
-    .logo-txt.txt {
-      margin-top: 0px;
-    }
-
-    @include respond-below(sm) {
-      margin: 0 auto;
-    }
-
-    @include respond-below(xxs) {
-      height: 25px;
-
-      .logo-txt {
-        display: none;
-      }
-
-    }
-  }
-
-  .language-button {
-    background: $background-color;
-    border: initial;
-    font-size: 0.8rem;
-    color: $secondary-color;
-    padding: .6rem 1rem;
-
-    @include respond-below(xs) {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-    }
-  }
-
-  .search {
-    position: relative;
-    width: $sub-menu-width;
-    border-radius: 20px;
-    background: $background-color;
-
-    input {
-      border: initial;
-      background: transparent;
-      outline: initial !important;
-      padding: 0.5rem 1rem;
-      line-height: 1;
-      font-size: 0.8rem;
-      width: 93%;
-      color: $primary-color;
-    }
-
-    .search-icon {
-      font-size: 17px;
-      border-radius: 10px;
-      color: $secondary-color;
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      bottom: -3px;
-      right: 5px;
-      text-align: center;
-      cursor: pointer;
-
-      &:hover {
-        color: $theme-color-1;
-      }
-    }
-
-    @include respond-below(md) {
-      width: $sub-menu-width/2;
-
-      input {
-        width: 85%;
-      }
-    }
-
-    @include respond-below(sm) {
-      width: 30px;
-      height: 30px;
-      background: initial;
-      margin-left: 0.6rem;
-      color: rgba($primary-color, 0.7);
-
-      input {
-        display: none;
-      }
-
-      .search-icon {
-        font-size: 17px;
-        width: 30px;
-        height: 30px;
-        bottom: -3px;
-        right: 0;
-        color: inherit;
-      }
-
-      &.mobile-view {
-        display: block;
-        width: 100%;
-        position: fixed;
-        z-index: 2;
-        background: $foreground-color;
-        left: 0;
-        top: 0;
-        height: $navbar-height-xs;
-        margin-left: 15px;
-
-        input {
-          display: block;
-          width: 100%;
-          height: 70px;
-          padding-left: 0;
-        }
-
-        span {
-          top: 50%;
-          transform: translateY(-50%);
-          right: 25px;
-        }
-      }
-    }
-  }
-
-  .header-icons {
-    margin-right: 1rem;
-
-    @include respond-below(xs) {
-      margin-right: 0;
-    }
-  }
-
-  .header-icon {
-    font-size: 16px;
-    color: $secondary-color;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    vertical-align: initial;
-
-    @include respond-below(xs) {
-      padding-left: 0.3rem;
-      padding-right: 0.3rem;
-    }
-
-    &:hover {
-      color: $theme-color-1;
-    }
-
-    &#fullScreenButton i:last-of-type {
-      display: none;
-    }
-
-    //&.notificationButton {
-    //  .count {
-    //    font-size: 9px;
-    //    color: $theme-color-1;
-    //    border: 1px solid $theme-color-1;
-    //    border-radius: 10px;
-    //    position: absolute;
-    //    width: 18px;
-    //    height: 15px;
-    //    text-align: center;
-    //    font-weight: 700;
-    //    top: 2px;
-    //    right: 2px;
-    //    line-height: 14px;
-    //
-    //    @include respond-below(xs) {
-    //      right: -1px;
-    //    }
-    //  }
-    //}
-    &.notificationButton {
-      .dot {
-        line-height: 14px;
-        font-size: 9px;
-        border-radius: 10px;
-        background: red;
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        font-weight: 700;
-        top: 6px;
-        right: 7px;
-
-        @include respond-below(xs) {
-          right: 2px;
-        }
-      }
-    }
-  }
-
-  .user {
-    color: lighten($primary-color, 30%);
-    position: relative;
-
-    img {
-      margin-left: 10px;
-      border-radius: 30px;
-      width: 40px;
-    }
-
-    @include respond-below(md) {
-      .name {
-        display: none;
-      }
-    }
-
-    @include respond-below(sm) {
-      img {
-        width: 30px;
-      }
-
-      margin-left: initial;
-
-      &:after {
-        font-size: 11px;
-        width: 14px;
-        height: 14px;
-        bottom: -3px;
-        right: -3px;
-      }
-    }
-  }
-
-  @include respond-below(xl) {
-    height: $navbar-height-lg;
-  }
-
-  @include respond-below(lg) {
-    height: $navbar-height-md;
-    padding: 0 $main-margin-md 0 0;
-  }
-
-  @include respond-below(sm) {
-    height: $navbar-height-xs;
-    padding: $main-margin-xs;
-  }
+  
 }
 
 #app-container {
@@ -8118,7 +7792,7 @@ input:-webkit-autofill {
     font-weight: 600;
   }
 
-  .patient-status  .material-icons {
+  .patient-status .material-icons {
     color: #20a320;
     font-size: 8px;
   }
@@ -8172,7 +7846,7 @@ input:-webkit-autofill {
     border-top: unset;
   }
 
-.rbc-day-slot.rbc-time-column
+  .rbc-day-slot.rbc-time-column
   .rbc-timeslot-group {
     .rbc-time-slot {
       cursor: pointer;
@@ -8186,6 +7860,7 @@ input:-webkit-autofill {
       display: flex;
       align-items: center;
     }
+
     .rbc-time-slot:last-child {
       display: none;
     }
@@ -8200,27 +7875,33 @@ input:-webkit-autofill {
   .big-calendar-header {
     font-size: 15px;
     color: black;
-    .calendar-icon{
+
+    .calendar-icon {
       font-size: 15px;
       color: grey;
     }
   }
+
   .add-btn {
     font-size: 12px;
     width: unset;
     cursor: pointer;
   }
+
   .rbc-events-container {
     right: 0;
+
     .rbc-event {
       height: 35px !important;
       margin-bottom: 3px;
       background: #0ead69;
       border-color: #0ead69;
       align-items: center;
+
       &:first-child {
         margin-top: 3px;
       }
+
       .rbc-event-content {
         font-size: 15px
       }

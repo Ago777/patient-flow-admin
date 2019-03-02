@@ -7,7 +7,7 @@ import {
 } from 'Constants/actionTypes';
 
 const INIT_STATE = {
-    user: JSON.parse(localStorage.getItem('user')),
+    userAdmin: JSON.parse(localStorage.getItem('userAdmin')),
     loading: false,
     loginError: null
 };
@@ -17,13 +17,13 @@ export default (state = INIT_STATE, action) => {
         case LOGIN_PENDING:
             return {...state, loading: true};
         case LOGIN_USER_SUCCESS:
-            return {...state, loading: false, user: action.payload};
+            return {...state, loading: false, userAdmin: action.payload};
         case LOGIN_USER_FAILED:
             return {...state, loading: false, loginError: action.payload};
         case RESET_ERROR:
             return {...state, loginError: action.payload};
         case LOGOUT_USER:
-            return {...state, user: null};
+            return {...state, userAdmin: null};
         default:
             return {...state};
     }

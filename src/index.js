@@ -4,9 +4,9 @@ const rootEl = document.getElementById("root");
 
 
 let render = () => {
-    const MainApp = require('./App').default;
+    const AdminApp = require('./App').default;
     ReactDOM.render(
-      <MainApp />,
+      <AdminApp />,
       rootEl
     );
 };

@@ -2,10 +2,9 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { configureStore } from "Redux/store";
-
 import App from "Containers/App";
 
-const MainApp = () => (
+const AdminApp = () => (
   <Provider store={configureStore()}>
     <Router>
       <Switch>
@@ -15,4 +14,4 @@ const MainApp = () => (
   </Provider>
 );
 
-export default MainApp;
+export default AdminApp;
